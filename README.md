@@ -18,88 +18,19 @@
 </div>
 
 ---
+## 🎥 End-to-End Invoice Processing Demo
 
-## 📸 Screenshots
+This demo showcases the complete workflow of the **Invoice Data Extraction System**, from uploading an invoice to generating validated, structured JSON output. It demonstrates the application's AI-powered extraction pipeline, including document processing, data extraction, financial validation, and the final results presented through the interactive web interface.
 
-### Upload & Extract Interface
-The main interface provides a clean two-panel layout. Upload an invoice on the left, view structured results on the right — all without page reloads.
+▶️ **[Watch the Demo](Video/demo.mp4)**
 
-![Upload Interface](Screenshots/Screenshot%202026-06-30%20115308.png)
-*Drag-and-drop upload zone with extraction options (OCR, two-pass, multi-page, caching toggles)*
+### Modular Project Architecture
 
----
+The application is built using a modular Python architecture where each component is responsible for a specific stage of the invoice processing pipeline—from preprocessing and OCR to AI extraction, GST calculation, validation, and caching.
 
-### Extraction in Progress
-A real-time animated step tracker shows exactly what the system is doing — from image preprocessing to AI model calls.
+![Project Structure](Screenshots/Screenshot%202026-06-30%20125808.png)
 
-![Extraction Progress](Screenshots/Screenshot%202026-06-30%20115317.png)
-*Live extraction log: preprocessing → orientation detection → multi-pass AI extraction → GST enrichment*
-
----
-
-### Results — Summary Tab
-After extraction, the **Summary** tab gives an at-a-glance overview with status badges, invoice header details, seller/buyer party information, and key financial figures.
-
-![Summary Tab](Screenshots/Screenshot%202026-06-30%20115327.png)
-*Invoice metadata cards: number, date, PO number, seller/customer GSTIN, invoice amount, item count, page count*
-
----
-
-### Results — Line Items Tab
-The **Items** tab renders a scrollable table of all extracted line items, with free/bonus items highlighted distinctly.
-
-![Items Tab](Screenshots/Screenshot%202026-06-30%20115337.png)
-*Full item table: Description, Batch, Qty, Unit Price, GST%, Amount, Item Code, HSN. Free items shown with [FREE] badge in yellow*
-
----
-
-### Results — Financial Totals Tab
-The **Totals** tab displays a structured grid of all financial aggregates including GST breakdown (CGST/SGST/IGST), round-off, and invoice amount.
-
-![Totals Tab](Screenshots/Screenshot%202026-06-30%20115345.png)
-*Financial summary: Invoice Amount, Taxable Amount, CGST, SGST, IGST, Total GST, Round Off, Total Quantity*
-
----
-
-### Results — Raw JSON Tab
-The **JSON** tab shows syntax-highlighted raw extraction output with one-click download and clipboard copy.
-
-![JSON Tab](Screenshots/Screenshot%202026-06-30%20125532.png)
-*Syntax-highlighted JSON in VS Code dark theme. Download as `.json` or copy to clipboard instantly*
-
----
-
-### Multi-Page Invoice Processing
-The system processes multi-page PDFs seamlessly — all pages are stacked into one image for complete document context.
-
-![Multi-Page Result](Screenshots/Screenshot%202026-06-30%20125539.png)
-*Multi-page PDF extraction: page count badge, all items from all pages merged into a single output*
-
----
-
-### Free Item Splitting in Action
-When an invoice contains bonus quantities like `"20+2"`, the system splits them into separate paid and free records automatically.
-
-![Free Item Splitting](Screenshots/Screenshot%202026-06-30%20125552.png)
-*Before: quantity = "20+2" · After: 2 records — paid (qty=20, free_item_yn="0") and free (qty=2, free_item_yn="1")*
-
----
-
-### Cache Hit — Instant Results
-When the same invoice is uploaded again, results are served from cache instantly without any API calls.
-
-![Cache Hit](Screenshots/Screenshot%202026-06-30%20125556.png)
-*"⚡ Cached Result" badge — same file hash detected, result returned in milliseconds*
-
----
-
-### Validation Tab
-The **Validation** tab shows a checklist of extraction quality indicators — GST consistency, item count, multi-page status, cache status, and any processing warnings.
-
-![Validation Tab](Screenshots/Screenshot%202026-06-30%20125808.png)
-*Extraction checklist: GST CGST=SGST validation, item count confirmation, page count, cache status, warning log*
-
----
+*Core modules include `app_web.py`, `model_client.py`, `preprocessing.py`, `pdf_utils.py`, `gst_calculator.py`, `gst_enrichment.py`, `free_item_splitter.py`, `cache_manager.py`, and `schema.py`, providing a clean and maintainable codebase.*
 
 ## 📋 Table of Contents
 
