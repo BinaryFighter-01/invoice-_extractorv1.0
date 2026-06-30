@@ -18,72 +18,11 @@
 </div>
 
 ---
+## 🎥 End-to-End Invoice Processing Demo
 
-## 📸 Screenshots
+This demo showcases the complete workflow of the **Invoice Data Extraction System**, from uploading an invoice to generating validated, structured JSON output. It demonstrates the application's AI-powered extraction pipeline, including document processing, data extraction, financial validation, and the final results presented through the interactive web interface.
 
-### Upload & Extract Interface
-The main interface provides a clean two-panel layout. Upload an invoice on the left, view structured results on the right — all without page reloads.
-
-![Upload Interface](Screenshots/Screenshot%202026-06-30%20115308.png)
-*Drag-and-drop upload zone with extraction options (OCR, two-pass, multi-page, caching toggles)*
-
----
-
-### Extraction in Progress
-A real-time animated step tracker shows exactly what the system is doing — from image preprocessing to AI model calls.
-
-![Extraction Progress](Screenshots/Screenshot%202026-06-30%20115317.png)
-*Live extraction log: preprocessing → orientation detection → multi-pass AI extraction → GST enrichment*
-
-### Results — Summary Dashboard
-
-Once extraction is complete, the **Summary** tab presents a high-level overview of the processed invoice. Important document details, processing information, customer and seller details, and key invoice statistics are grouped into easy-to-read information cards for quick verification.
-
-![Summary Tab](Screenshots/Screenshot%202026-06-30%20125552.png)
-
-*Displays invoice number, invoice date, PO number, processing time, seller/customer information, invoice amount, total quantity, total items, and processed page count.*
-
----
-
-### Results — Extracted Line Items
-
-The **Items** tab lists every extracted product from the invoice in a structured table, allowing users to review each line item without navigating through the original document.
-
-![Items Tab](Screenshots/Screenshot%202026-06-30%20115317.png)
-
-*Each row contains the product description, batch number, quantity, unit price, GST rate, amount, item code, and HSN code for easy verification.*
-
----
-
-### Results — Financial Summary
-
-The **Totals** tab consolidates all invoice-level financial values into a clean dashboard. It provides a complete GST breakdown together with invoice totals, making financial validation simple.
-
-![Totals Tab](Screenshots/Screenshot%202026-06-30%20125539.png)
-
-*Shows Invoice Amount, Taxable Amount, Total GST, CGST, SGST, IGST, GST Rates, Round Off, Discount, and Total Quantity.*
-
----
-
-### Results — Structured JSON Output
-
-The **JSON** tab provides the complete extraction result in machine-readable JSON format. It is intended for developers, API integrations, and downstream automation workflows.
-
-![JSON Tab](Screenshots/Screenshot%202026-06-30%20115337.png)
-
-*Features syntax-highlighted JSON with one-click Download and Copy to Clipboard actions for easy export and integration.*
-
----
-
-### Results — Extraction Validation
-
-The **Validation** tab summarizes the overall extraction status and confirms whether the document was processed successfully. It provides a simple checklist of completed processing steps to help users verify the extraction outcome.
-
-![Validation Tab](Screenshots/Screenshot%202026-06-30%20115345.png)
-
-*Displays extraction completion status, invoice parsing confirmation, total extracted items, and other processing validation messages when applicable.*
-
----
+▶️ **[Watch the Demo](Video/demo.mp4)**
 
 ### Modular Project Architecture
 
